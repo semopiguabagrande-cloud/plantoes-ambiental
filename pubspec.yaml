@@ -1,0 +1,49 @@
+
+name: guarda_ambiental_ret
+description: Aplicativo de inscrições para Plantões RET da Guarda Civil Ambiental de Iguaba Grande.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  shared_preferences: ^2.3.2
+  window_manager: ^0.4.3
+  pdf: ^3.11.1
+  printing: ^5.13.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+    - assets/app_icon.png
+
+# Configuração do ícone oficial do aplicativo
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/app_icon.png"
+  min_sdk_android: 21
+
+  web:
+    generate: true
+    image_path: "assets/app_icon.png"
+    background_color: "#00291B"
+    theme_color: "#006B3C"
+
+  windows:
+    generate: true
+    image_path: "assets/app_icon.png"
+    icon_size: 256
