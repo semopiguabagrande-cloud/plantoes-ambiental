@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'dart:convert';
 
@@ -28,7 +28,7 @@ class ApiService {
 
 
 static const String baseUrl =
-    'https://script.google.com/macros/s/AKfycby8G_3IoCGJ2zy2xV7kqvZYF_Xuq1A5lZVnhqua5uwL1Dk-Hcv_yx9-ZYf1VbSau7k/exec';
+    'https://script.google.com/macros/s/AKfycbz5t69jO8hwuvFAECWaFwCH3fsrytTATCJ6Szfo31qW5UEb6JtoHtlSqzAmSnDJU1si/exec';
 
 
 
@@ -39,7 +39,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // IDENTIFICAÇÃO DO CLIENTE E VERSÃO
+  // IDENTIFICAÃ‡ÃƒO DO CLIENTE E VERSÃƒO
 
   // ===================================================
 
@@ -65,7 +65,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // CHAVES DA SESSÃO SALVA
+  // CHAVES DA SESSÃƒO SALVA
 
   // ===================================================
 
@@ -107,7 +107,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // CONTROLE DA SESSÃO EM MEMÓRIA
+  // CONTROLE DA SESSÃƒO EM MEMÃ“RIA
 
   // ===================================================
 
@@ -143,19 +143,19 @@ static const String baseUrl =
 
   //
 
-  // Repete a requisição em caso de timeout. É seguro
+  // Repete a requisiÃ§Ã£o em caso de timeout. Ã‰ seguro
 
-  // nas chamadas de LEITURA/RENOVAÇÃO, porque o servidor
+  // nas chamadas de LEITURA/RENOVAÃ‡ÃƒO, porque o servidor
 
-  // é idempotente nelas (mesma tentativa/dispositivo =
+  // Ã© idempotente nelas (mesma tentativa/dispositivo =
 
-  // adota a sessão; leitura não altera nada).
+  // adota a sessÃ£o; leitura nÃ£o altera nada).
 
   //
 
-  // NÃO usamos nas ESCRITAS (salvar/cancelar) para não
+  // NÃƒO usamos nas ESCRITAS (salvar/cancelar) para nÃ£o
 
-  // arriscar duplicar plantão.
+  // arriscar duplicar plantÃ£o.
 
   // ===================================================
 
@@ -199,7 +199,7 @@ static const String baseUrl =
 
 
 
-    throw Exception('Falha de conexão.');
+    throw Exception('Falha de conexÃ£o.');
 
   }
 
@@ -207,7 +207,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // NORMALIZAÇÃO DE CÓDIGO
+  // NORMALIZAÃ‡ÃƒO DE CÃ“DIGO
 
   // ===================================================
 
@@ -223,7 +223,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // INICIALIZAR / RECUPERAR SESSÃO LOCAL
+  // INICIALIZAR / RECUPERAR SESSÃƒO LOCAL
 
   // ===================================================
 
@@ -259,7 +259,7 @@ static const String baseUrl =
 
     } catch (e) {
 
-      debugPrint('Inicializar sessão: erro: $e');
+      debugPrint('Inicializar sessÃ£o: erro: $e');
 
       _codigoSessao = null;
 
@@ -273,7 +273,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // SALVAR SESSÃO LOCALMENTE
+  // SALVAR SESSÃƒO LOCALMENTE
 
   // ===================================================
 
@@ -295,7 +295,7 @@ static const String baseUrl =
 
     } catch (e) {
 
-      debugPrint('Salvar sessão local: erro: $e');
+      debugPrint('Salvar sessÃ£o local: erro: $e');
 
     }
 
@@ -305,7 +305,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // APAGAR SESSÃO LOCAL
+  // APAGAR SESSÃƒO LOCAL
 
   // ===================================================
 
@@ -329,7 +329,7 @@ static const String baseUrl =
 
     } catch (e) {
 
-      debugPrint('Limpar sessão: erro: $e');
+      debugPrint('Limpar sessÃ£o: erro: $e');
 
     }
 
@@ -339,7 +339,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // GERAR IDENTIFICADOR ALEATÓRIO
+  // GERAR IDENTIFICADOR ALEATÃ“RIO
 
   // ===================================================
 
@@ -517,7 +517,7 @@ static const String baseUrl =
 
           'success': false,
 
-          'mensagem': 'Código não informado.',
+          'mensagem': 'CÃ³digo nÃ£o informado.',
 
         };
 
@@ -537,13 +537,13 @@ static const String baseUrl =
 
       debugPrint('INICIANDO LOGIN');
 
-      debugPrint('Código: $codigoNormalizado');
+      debugPrint('CÃ³digo: $codigoNormalizado');
 
       debugPrint('Tentativa ID: $tentativaId');
 
       debugPrint('Device ID: $deviceId');
 
-      debugPrint('Forçar: $forcar');
+      debugPrint('ForÃ§ar: $forcar');
 
       debugPrint('========================================');
 
@@ -575,7 +575,7 @@ static const String baseUrl =
 
       // Como o servidor reconhece a mesma tentativa/
 
-      // dispositivo, ele ADOTA a sessão já criada.
+      // dispositivo, ele ADOTA a sessÃ£o jÃ¡ criada.
 
       final response = await _getComRetry(url);
 
@@ -589,7 +589,7 @@ static const String baseUrl =
 
       if (response.statusCode != 200) {
 
-        throw Exception('Erro de conexão.');
+        throw Exception('Erro de conexÃ£o.');
 
       }
 
@@ -601,7 +601,7 @@ static const String baseUrl =
 
       if (body is! Map) {
 
-        throw Exception('Resposta inválida do servidor.');
+        throw Exception('Resposta invÃ¡lida do servidor.');
 
       }
 
@@ -627,7 +627,7 @@ static const String baseUrl =
 
             'mensagem':
 
-                'O servidor não forneceu uma sessão válida.',
+                'O servidor nÃ£o forneceu uma sessÃ£o vÃ¡lida.',
 
           };
 
@@ -659,7 +659,7 @@ static const String baseUrl =
 
       debugPrint(
 
-        'Login não autorizado: '
+        'Login nÃ£o autorizado: '
 
         '${resultado['mensagem'] ?? 'sem mensagem'}',
 
@@ -673,7 +673,7 @@ static const String baseUrl =
 
       debugPrint('LOGIN: timeout. Tentativa preservada.');
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
 
@@ -689,7 +689,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // RECUPERAR SESSÃO
+  // RECUPERAR SESSÃƒO
 
   // ===================================================
 
@@ -711,7 +711,7 @@ static const String baseUrl =
 
           'sessaoExpirada': true,
 
-          'mensagem': 'Nenhuma sessão salva neste dispositivo.',
+          'mensagem': 'Nenhuma sessÃ£o salva neste dispositivo.',
 
         };
 
@@ -743,9 +743,9 @@ static const String baseUrl =
 
 
 
-      // Retry também aqui: abrir o app em rede lenta
+      // Retry tambÃ©m aqui: abrir o app em rede lenta
 
-      // não deve travar.
+      // nÃ£o deve travar.
 
       final response = await _getComRetry(url);
 
@@ -759,7 +759,7 @@ static const String baseUrl =
 
           'erroConexao': true,
 
-          'mensagem': 'Não foi possível verificar a sessão.',
+          'mensagem': 'NÃ£o foi possÃ­vel verificar a sessÃ£o.',
 
         };
 
@@ -779,7 +779,7 @@ static const String baseUrl =
 
           'erroConexao': true,
 
-          'mensagem': 'Resposta inválida do servidor.',
+          'mensagem': 'Resposta invÃ¡lida do servidor.',
 
         };
 
@@ -847,13 +847,13 @@ static const String baseUrl =
 
         'mensagem':
 
-            'Tempo de conexão esgotado. A sessão local foi preservada.',
+            'Tempo de conexÃ£o esgotado. A sessÃ£o local foi preservada.',
 
       };
 
     } catch (e) {
 
-      debugPrint('Recuperar sessão: erro: $e');
+      debugPrint('Recuperar sessÃ£o: erro: $e');
 
       return {
 
@@ -861,7 +861,7 @@ static const String baseUrl =
 
         'erroConexao': true,
 
-        'mensagem': 'Não foi possível verificar a sessão.',
+        'mensagem': 'NÃ£o foi possÃ­vel verificar a sessÃ£o.',
 
       };
 
@@ -893,7 +893,7 @@ static const String baseUrl =
 
         throw Exception(
 
-          'Sessão não encontrada. Faça login novamente.',
+          'SessÃ£o nÃ£o encontrada. FaÃ§a login novamente.',
 
         );
 
@@ -967,7 +967,7 @@ static const String baseUrl =
 
             resultado['mensagem']?.toString() ??
 
-                'Sessão inválida ou encerrada.',
+                'SessÃ£o invÃ¡lida ou encerrada.',
 
           );
 
@@ -987,15 +987,15 @@ static const String baseUrl =
 
 
 
-      throw Exception('Resposta inválida ao buscar vagas.');
+      throw Exception('Resposta invÃ¡lida ao buscar vagas.');
 
     } on TimeoutException {
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
-      if (e.toString().contains('Falha de conexão.')) {
-        throw Exception('Falha de conexão.');
+      if (e.toString().contains('Falha de conexÃ£o.')) {
+        throw Exception('Falha de conexÃ£o.');
       }
 
       debugPrint('Buscar vagas: erro: $e');
@@ -1010,17 +1010,17 @@ static const String baseUrl =
 
   // ===================================================
 
-  // SALVAR INSCRIÇÃO
+  // SALVAR INSCRIÃ‡ÃƒO
 
   //
 
-  // SEM retry de propósito: repetir uma escrita pode
+  // SEM retry de propÃ³sito: repetir uma escrita pode
 
-  // duplicar plantão. O servidor é idempotente (recusa
+  // duplicar plantÃ£o. O servidor Ã© idempotente (recusa
 
-  // "já tem plantão no dia"), mas por segurança a
+  // "jÃ¡ tem plantÃ£o no dia"), mas por seguranÃ§a a
 
-  // escrita fica com tentativa única.
+  // escrita fica com tentativa Ãºnica.
 
   // ===================================================
 
@@ -1054,7 +1054,7 @@ static const String baseUrl =
 
           'mensagem':
 
-              'Sessão não encontrada. Faça login novamente.',
+              'SessÃ£o nÃ£o encontrada. FaÃ§a login novamente.',
 
         };
 
@@ -1106,7 +1106,7 @@ static const String baseUrl =
 
       if (response.statusCode != 200) {
 
-        throw Exception('Erro ao salvar inscrição.');
+        throw Exception('Erro ao salvar inscriÃ§Ã£o.');
 
       }
 
@@ -1118,7 +1118,7 @@ static const String baseUrl =
 
       if (body is! Map) {
 
-        throw Exception('Resposta inválida ao salvar inscrição.');
+        throw Exception('Resposta invÃ¡lida ao salvar inscriÃ§Ã£o.');
 
       }
 
@@ -1140,14 +1140,14 @@ static const String baseUrl =
 
     } on TimeoutException {
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
-      if (e.toString().contains('Falha de conexão.')) {
-        throw Exception('Falha de conexão.');
+      if (e.toString().contains('Falha de conexÃ£o.')) {
+        throw Exception('Falha de conexÃ£o.');
       }
 
-      throw Exception('Erro ao salvar inscrição.\n$e');
+      throw Exception('Erro ao salvar inscriÃ§Ã£o.\n$e');
 
     }
 
@@ -1157,13 +1157,13 @@ static const String baseUrl =
 
   // ===================================================
 
-  // CANCELAR INSCRIÇÃO
+  // CANCELAR INSCRIÃ‡ÃƒO
 
   //
 
-  // Cancelamento é idempotente no servidor (só apaga o
+  // Cancelamento Ã© idempotente no servidor (sÃ³ apaga o
 
-  // que existe), mas mantemos tentativa única por
+  // que existe), mas mantemos tentativa Ãºnica por
 
   // simplicidade e previsibilidade.
 
@@ -1191,7 +1191,7 @@ static const String baseUrl =
 
           'mensagem':
 
-              'Sessão não encontrada. Faça login novamente.',
+              'SessÃ£o nÃ£o encontrada. FaÃ§a login novamente.',
 
         };
 
@@ -1235,7 +1235,7 @@ static const String baseUrl =
 
       if (response.statusCode != 200) {
 
-        throw Exception('Erro ao cancelar inscrição.');
+        throw Exception('Erro ao cancelar inscriÃ§Ã£o.');
 
       }
 
@@ -1247,7 +1247,7 @@ static const String baseUrl =
 
       if (body is! Map) {
 
-        throw Exception('Resposta inválida ao cancelar inscrição.');
+        throw Exception('Resposta invÃ¡lida ao cancelar inscriÃ§Ã£o.');
 
       }
 
@@ -1269,11 +1269,11 @@ static const String baseUrl =
 
     } on TimeoutException {
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
 
-      throw Exception('Erro ao cancelar inscrição.\n$e');
+      throw Exception('Erro ao cancelar inscriÃ§Ã£o.\n$e');
 
     }
 
@@ -1283,7 +1283,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // MINHAS INSCRIÇÕES
+  // MINHAS INSCRIÃ‡Ã•ES
 
   // ===================================================
 
@@ -1331,7 +1331,7 @@ static const String baseUrl =
 
       if (response.statusCode != 200) {
 
-        throw Exception('Erro ao buscar inscrições.');
+        throw Exception('Erro ao buscar inscriÃ§Ãµes.');
 
       }
 
@@ -1357,7 +1357,7 @@ static const String baseUrl =
 
         throw Exception(
 
-          resultado['mensagem'] ?? 'Erro ao buscar inscrições.',
+          resultado['mensagem'] ?? 'Erro ao buscar inscriÃ§Ãµes.',
 
         );
 
@@ -1367,7 +1367,7 @@ static const String baseUrl =
 
       if (body is! List) {
 
-        throw Exception('Resposta inválida ao buscar inscrições.');
+        throw Exception('Resposta invÃ¡lida ao buscar inscriÃ§Ãµes.');
 
       }
 
@@ -1385,14 +1385,14 @@ static const String baseUrl =
 
     } on TimeoutException {
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
-      if (e.toString().contains('Falha de conexão.')) {
-        throw Exception('Falha de conexão.');
+      if (e.toString().contains('Falha de conexÃ£o.')) {
+        throw Exception('Falha de conexÃ£o.');
       }
 
-      throw Exception('Erro ao buscar inscrições.\n$e');
+      throw Exception('Erro ao buscar inscriÃ§Ãµes.\n$e');
 
     }
 
@@ -1426,7 +1426,7 @@ static const String baseUrl =
 
           'mensagem':
 
-              'Sessão não encontrada. Faça login novamente.',
+              'SessÃ£o nÃ£o encontrada. FaÃ§a login novamente.',
 
         };
 
@@ -1476,7 +1476,7 @@ static const String baseUrl =
 
       if (body is! Map) {
 
-        throw Exception('Resposta inválida ao buscar dados iniciais.');
+        throw Exception('Resposta invÃ¡lida ao buscar dados iniciais.');
 
       }
 
@@ -1498,11 +1498,11 @@ static const String baseUrl =
 
     } on TimeoutException {
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
-      if (e.toString().contains('Falha de conexão.')) {
-        throw Exception('Falha de conexão.');
+      if (e.toString().contains('Falha de conexÃ£o.')) {
+        throw Exception('Falha de conexÃ£o.');
       }
 
       throw Exception('Erro ao buscar dados iniciais.\n$e');
@@ -1515,7 +1515,7 @@ static const String baseUrl =
 
   // ===================================================
 
-  // RELATÓRIO ADMINISTRATIVO
+  // RELATÃ“RIO ADMINISTRATIVO
 
   // ===================================================
 
@@ -1533,9 +1533,9 @@ static const String baseUrl =
 
         throw Exception(
 
-          'Sessão do administrador não encontrada. '
+          'SessÃ£o do administrador nÃ£o encontrada. '
 
-          'Faça login novamente.',
+          'FaÃ§a login novamente.',
 
         );
 
@@ -1575,7 +1575,7 @@ static const String baseUrl =
 
         throw Exception(
 
-          'Erro ao buscar relatório. Código HTTP: ${response.statusCode}',
+          'Erro ao buscar relatÃ³rio. CÃ³digo HTTP: ${response.statusCode}',
 
         );
 
@@ -1609,7 +1609,7 @@ static const String baseUrl =
 
             resultado['mensagem']?.toString() ??
 
-                'Sessão do administrador inválida ou encerrada.',
+                'SessÃ£o do administrador invÃ¡lida ou encerrada.',
 
           );
 
@@ -1665,7 +1665,7 @@ static const String baseUrl =
 
         throw Exception(
 
-          'O servidor retornou uma resposta inesperada ao buscar o relatório.',
+          'O servidor retornou uma resposta inesperada ao buscar o relatÃ³rio.',
 
         );
 
@@ -1673,24 +1673,24 @@ static const String baseUrl =
 
 
 
-      throw Exception('Resposta inválida ao buscar relatório.');
+      throw Exception('Resposta invÃ¡lida ao buscar relatÃ³rio.');
 
     } on TimeoutException {
 
-      throw Exception('Tempo de conexão esgotado.');
+      throw Exception('Tempo de conexÃ£o esgotado.');
 
     } catch (e) {
 
-      debugPrint('ERRO RELATÓRIO: $e');
+      debugPrint('ERRO RELATÃ“RIO: $e');
 
-      throw Exception('Erro ao buscar relatório.\n$e');
+      throw Exception('Erro ao buscar relatÃ³rio.\n$e');
 
     }
 
   }
 
   // ===================================================
-  // TRAVA DE TESTE — ADMINISTRADOR
+  // TRAVA DE TESTE â€” ADMINISTRADOR
   // HEARTBEAT
 
   // ===================================================
@@ -1761,7 +1761,7 @@ static const String baseUrl =
 
     } catch (e) {
 
-      debugPrint('Heartbeat: erro de conexão: $e');
+      debugPrint('Heartbeat: erro de conexÃ£o: $e');
 
       return true;
 
@@ -1809,7 +1809,7 @@ static const String baseUrl =
 
 
 
-    // Avisa o servidor em melhor esforço.
+    // Avisa o servidor em melhor esforÃ§o.
 
     try {
 
@@ -1858,3 +1858,4 @@ static const String baseUrl =
   }
 
 }
+
